@@ -12,7 +12,11 @@ export async function POST(
     // Validate that we have some data
     if (!payload || Object.keys(payload).length === 0) {
       return NextResponse.json(
-        { error: "No payload provided" },
+        {
+          status: "error",
+          message: "No payload provided",
+          error: "No payload provided",
+        },
         { status: 400 }
       );
     }
@@ -38,7 +42,7 @@ export async function POST(
       {
         status: "success",
         message: "Webhook processed successfully",
-        data: data,
+        data: data || undefined,
       },
       { status: 200 }
     );

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { supabase } from "./supabase";
 import { User, WebhookPayload } from "@/types/database";
 
